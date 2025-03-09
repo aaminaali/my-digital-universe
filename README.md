@@ -1,4 +1,4 @@
-# My Portfolio
+# My Digi Universe
 
 Welcome to my personal portfolio! This website showcases my projects, skills, and professional journey. Designed with a retro video game theme, it offers a unique and interactive user experience.
 
