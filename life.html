@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Your Player</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">🏠 Home</a></li>
+            <li><a href="about.html">👾 About Me</a></li>
+            <li><a href="projects.html">🚀 Projects</a></li>
+            <li><a href="life.html">🎮 Life</a></li>
+            <li><a href="contact.html">🎮 Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="pixel-card">
+        <h2 class="typing-text">🎮 Select Your Player</h2>
+        <div class="player-selection">
+            <div class="player-frame" onclick="showDetails('artsy')">
+                <div class="player">
+                    <img src="assets/bow.png" alt="Artsy Aamina">
+                    <h3>🎨 Artsy Aamina</h3>
+                </div>
+            </div>
+            <div class="player-frame" onclick="showDetails('adventurer')">
+                <div class="player">
+                    <img src="assets/knight.png" alt="Adventurer Aamina">
+                    <h3>🗺️ Adventurer Aamina</h3>
+                </div>
+            </div>
+            <div class="player-frame" onclick="showDetails('zen')">
+                <div class="player">
+                    <img src="assets/magician.png" alt="Zen Aamina">
+                    <h3>🌿 Zen Aamina</h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- Player Details (Hidden at First) -->
+        <div id="player-details" class="hidden">
+            <h2 id="player-title"></h2>
+            <p id="player-description"></p>
+            <div id="player-images" class="player-images-container"></div>
+        </div>
+    </section>
+
+    <div id="pixel-ground"></div>
+    <div id="pixel-sprites"></div>
+
+    <!-- Add Sound Effect -->
+    <audio id="select-sound" src="assets/select-beep.mp3"></audio>
+
+</body>
+</html>

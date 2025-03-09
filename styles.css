@@ -1,0 +1,540 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+
+
+body {
+    font-family: 'Poppins', sans-serif; 
+    background: linear-gradient(90deg, #1a1a2e, #2a2a4a);
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/* Headings in Pixel Font */
+h1, h2 {
+    font-family: 'Press Start 2P', cursive;
+}
+
+/* Landing Page */
+.landing-page {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, #ffccff, #ff99cc);
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Hide content initially */
+.content {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+}
+
+
+/* Glowing Press Start Button */
+.glow-button {
+    font-family: 'Press Start 2P', cursive;
+    background: #000;
+    color: #ffccff;
+    border: 3px solid #ff66ff;
+    padding: 15px 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0px 0px 10px #ff66ff;
+}
+
+.glow-button:hover {
+    background: #ff66ff;
+    color: #000;
+    box-shadow: 0px 0px 20px #ff00ff;
+}
+
+/* 🎮 Navbar */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 12px 0;
+    z-index: 1000;
+    border-bottom: 4px solid #ff66ff;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ff99cc;
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    color: #ffffff;
+    text-shadow: 0px 0px 10px #ff66ff;
+}
+
+/* Fix Content Overlapping with Navbar */
+body {
+    padding-top: 60px; /* Pushes content down so navbar doesn't cover it */
+}
+
+/* 🎮 Moving Pixel Sprites */
+#pixel-sprites {
+    position: fixed;
+    bottom: 50px;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-around;
+    pointer-events: none;
+}
+
+/* 🎮 Moving Pixel Sprites */
+#pixel-sprites {
+    position: fixed;
+    bottom: 50px;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+/* 🎮 Moving Pixel Sprites */
+#pixel-sprites {
+    position: fixed;
+    bottom: 50px;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+/* Individual Sprites */
+.pixel-sprite {
+    width: 50px;
+    height: 50px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 100vw; /* Start off-screen to the right */
+    animation: moveSprites 12s linear infinite, floatSprites 2s infinite alternate ease-in-out;
+}
+
+/* Move Sprites Horizontally Across the Screen */
+@keyframes moveSprites {
+    0% { left: 100vw; }  /* Start fully off-screen on the right */
+    100% { left: -10vw; } /* Move off-screen to the left */
+}
+
+/* Floating Effect */
+@keyframes floatSprites {
+    0% { transform: translateY(0px); }
+    100% { transform: translateY(-10px); }
+}
+
+/* 🎮 Project Grid */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+/* 🎮 Project Box Styling */
+.project-box {
+    background: rgba(0, 0, 0, 0.9);
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    border: 3px solid #ff66ff;
+    box-shadow: 0px 0px 10px #ff99cc;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* 🎮 Project Boxes Jump When Hovered */
+.project-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 0px 15px #ff99cc;
+}
+
+/* 🎮 Typing Animation */
+.typing-text::after {
+    content: '|';
+    display: inline-block;
+    animation: blink 0.6s step-end infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+
+/* 🎮 Pixelated Moving Ground */
+#pixel-ground {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: url('assets/pixel-ground.png') repeat-x;
+    animation: moveGround 10s linear infinite;
+}
+
+@keyframes moveGround {
+    from { background-position: 0 0; }
+    to { background-position: -100% 0; }
+}
+
+/* 🎮 Player Selection Grid */
+.player-selection {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+/* 🎮 Glowing Frame Around Each Player */
+.player-frame {
+    width: 200px;
+    height: 280px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.9);
+    border: 4px solid transparent;
+    box-shadow: 0px 0px 10px #ff66ff;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out, border 0.2s ease-in-out;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 🎮 Hover Effect - Lights Up Like an Arcade Character Selection */
+.player-frame:hover {
+    border: 4px solid #ff99cc;
+    transform: scale(1.1);
+    box-shadow: 0px 0px 20px #ff00ff;
+}
+
+/* 🎮 Player Box Inside the Frame */
+.player {
+    text-align: center;
+}
+
+/* 🎮 Player Images */
+.player img {
+    width: 100%;
+    height: 140px;
+    object-fit: contain;
+}
+
+/* 🎮 Flickering Effect on Selection */
+.flicker {
+    animation: flickerEffect 0.15s infinite alternate;
+}
+
+@keyframes flickerEffect {
+    0% { opacity: 1; }
+    100% { opacity: 0.8; }
+}
+
+/* 🎮 Retro Arcade Info Panel (Pink Box for Stats) */
+.about-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 102, 255, 0.15);
+    border: 4px solid #ff66ff;
+    box-shadow: 0px 0px 15px #ff99cc;
+    padding: 30px;
+    width: 70%;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+
+/* 🎮 BIGGER Pixel Avatar */
+.player-avatar {
+    width: 200px;
+    height: 200px;
+    image-rendering: pixelated;
+    margin-right: 30px;
+}
+
+/* 🎮 Fix Skill Level Section */
+h3 {
+    font-family: 'Press Start 2P', cursive;
+    color: #ff66ff;
+    margin-bottom: 15px;
+}
+
+/* 🎮 Fix Skill Bar Layout */
+.skill-bar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+    margin: 15px auto;
+    width: 80%;
+}
+
+/* 🎮 Better Font for Skill Labels */
+.skill-bar span {
+    font-family: 'Poppins', sans-serif;
+    color: #ff99cc;
+    width: 140px;
+    text-align: right;
+    font-weight: bold;
+}
+
+/* 🎮 Fix Word Cutoff Issue */
+.skill-bar span:last-child {
+    white-space: nowrap; /* Prevents text from wrapping */
+}
+
+/* 🎮 Skill Progress Bar */
+.bar {
+    width: 100%;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 3px solid #ff66ff;
+    box-shadow: 0px 0px 8px #ff66ff;
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/* 🎮 Individual Skill Bar Sizes */
+.fill.coding { width: 75%; }
+.fill.design { width: 55%; }
+.fill.research { width: 95%; }
+.fill.sleeping { width: 10%; }
+.fill.multitasking { width: 30%; }
+
+/* 🎮 Loading Animation */
+@keyframes loadBar {
+    0% { width: 0; }
+    100% { width: var(--final-width); }
+}
+
+/* 🎮 Apply Animation Without Overriding Width */
+.fill {
+    height: 100%;
+    background: linear-gradient(90deg, #ff66ff, #ff99cc);
+    animation: loadBar 2s ease-in-out forwards;
+}
+
+/* 🎮 Set Custom Properties for Each Bar */
+.fill.coding { --final-width: 75%; }
+.fill.design { --final-width: 55%; }
+.fill.research { --final-width: 95%; }
+.fill.sleeping { --final-width:: 10%; }
+.fill.multitasking { --final-width: 30%; }
+
+
+
+/* 🎮 Hacked Terminal Background */
+.terminal {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.9);
+    border: 4px solid #ff66ff;
+    box-shadow: 0px 0px 15px #ff99cc;
+    padding: 30px;
+    width: 75%;
+    margin: 30px auto;
+    border-radius: 10px;
+}
+
+/* 🎮 Glitchy Warning Header */
+.glitch-text {
+    font-family: 'Press Start 2P', cursive;
+    color: #ff3333;
+    text-shadow: 2px 2px 8px rgba(255, 0, 0, 0.8);
+    animation: glitchEffect 1s infinite alternate;
+}
+
+/* 🎮 Typing Text Effect */
+.typing-text2 {
+    font-family: 'VT323', monospace;
+    font-size: 18px;
+    color: #00ffcc;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid #00ffcc;
+    width: 0;
+    animation: typing 3s steps(40, end) forwards, blinkCursor 0.8s infinite;
+}
+
+/* 🎮 Glitch Animation */
+@keyframes glitchEffect {
+    0% { text-shadow: 2px 2px 8px #ff0000; }
+    100% { text-shadow: -2px -2px 8px #ff66ff; }
+}
+
+/* 🎮 Typing Animation */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+/* 🎮 Cursor Blinking */
+@keyframes blinkCursor {
+    50% { border-color: transparent; }
+}
+
+/* 🎮 Project Cards (Neon Panels) */
+.project-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.project-card {
+    background: rgba(0, 0, 0, 0.8);
+    border: 3px solid #ff66ff;
+    box-shadow: 0px 0px 10px #ff99cc;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+    max-width: 600px;
+    margin: 0 auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* 🎮 Hover Effect - Looks Like a Button Press */
+.project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 20px #ff00ff;
+}
+
+
+
+
+/* 🎮 Centering the Arcade Machine */
+.arcade-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+/* 🎮 Adjusted Arcade Machine Screen */
+.arcade-screen {
+    width: 85%;
+    max-width: 700px;
+    background: #000;
+    border: 12px solid #ff66ff;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0px 0px 30px #ff99cc;
+    border-radius: 15px;
+    font-family: 'Press Start 2P', cursive;
+    color: #ffccff;
+}
+
+/* 🎮 Contact Info Section */
+.contact-info {
+    text-align: left;
+    background: rgba(255, 102, 255, 0.2);
+    border: 3px solid #ff66ff;
+    padding: 15px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+}
+
+/* 🎮 Contact Info Text */
+.contact-info p {
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+/* 🎮 Spacing Out Form Elements */
+.arcade-form label {
+    font-family: 'Press Start 2P', cursive;
+    color: #ff99cc;
+    display: block;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+/* 🎮 Input Fields */
+.arcade-form input,
+.arcade-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    background: rgba(0, 0, 0, 0.85);
+    border: 3px solid #ff66ff;
+    color: #ffccff;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 8px;
+    box-shadow: 0px 0px 12px #ff66ff;
+}
+
+/* 🎮 Textarea (Message Box) */
+.arcade-form textarea {
+    height: 120px;
+    resize: none;
+}
+
+/* 🎮 Glowing "Press Start" Button */
+.arcade-button {
+    font-family: 'Press Start 2P', cursive;
+    background: #000;
+    color: #ffccff;
+    border: 4px solid #ff66ff;
+    padding: 15px 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0px 0px 15px #ff66ff;
+    margin-top: 30px;
+}
+
+.arcade-button:hover {
+    background: #ff66ff;
+    color: #000;
+    box-shadow: 0px 0px 25px #ff00ff;
+    transform: scale(1.08);
+}
+
+.player-images-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.player-images-container img {
+    width: 100px;
+    height: auto;
+    border-radius: 10px; 
+}
